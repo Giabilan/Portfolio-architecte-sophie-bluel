@@ -53,10 +53,10 @@ for (let i = 0; i < categories.length; i++) {
   // Ajout du texte du bouton "Tous" via la propriété de l'objet "categoryAll" (name)
   btnFiltre.innerText = category.name;
   // Ajout d'un évenement au "click" sur les boutons de "btnFiltre"
-    btnFiltre.addEventListener("click", function () {
-      // Appel de la fonction "categoryFilter" avec l'argument "category.id" qui est l'id de api/categories
-      categoryFilter(category.id);
-    });
+  btnFiltre.addEventListener("click", function () {
+    // Appel de la fonction "categoryFilter" avec l'argument "category.id" qui est l'id de api/categories
+    categoryFilter(category.id);
+  });
   // "btnFiltre" enfant de "containerFilterBtn"
   containerFilterBtn.appendChild(btnFiltre);
 }
@@ -81,4 +81,37 @@ function categoryFilter(IdOfApiCategories) {
     document.querySelector(".gallery").innerHTML = "";
     generateGallery(worksFiltered);
   }
+}
+
+// ---------------Changement de couleurs au click sur les filtres---------------
+
+// Sélection de tous les boutons
+const buttons = document.querySelectorAll("button");
+
+// Parcours tout les "buttons"
+for (let i = 0; i < buttons.length; i++) {
+  // Ajout d'une class "filter-selected" pour chaque "buttons"
+  buttons[i].classList.add("filter-selected");
+}
+
+// Fonction pour réinitialiser le style de tous les boutons
+function resetButtonColors() {
+  // "button" parcours chaque élements de "buttons"
+  for (let button of buttons) {
+    // Les boutons non concernés par le click prendront ce style :
+    button.style.backgroundColor = "white";
+    button.style.color = "#1D6154";
+  }
+}
+
+// "button" parcours chaque élements de "buttons"
+for (let button of buttons) {
+  // Chaque "button" au click
+  button.addEventListener("click", function () {
+    // Appel de la fonction "resetButtonColors()" qui va réinitialiser le style
+    resetButtonColors();
+    // Changement de style au bouton cliqué :
+    button.style.backgroundColor = "#1D6154";
+    button.style.color = "white";
+  });
 }
