@@ -1,0 +1,44 @@
+/* Header */
+.aLogin {
+  font-weight: bold;
+}
+
+/*  section login*/
+
+.login {
+  width: 50%;
+  margin: auto;
+}
+
+.login h2 {
+  text-align: center;
+}
+
+.login form {
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login form a {
+  margin: auto;
+  color: #3d3d3d;
+  font-size: 14px;
+  font-family: Work Sans;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+
+.login label {
+  margin: 32px 0 16px 0;
+}
+
+.login input {
+  width: 100%;
+  height: 51px;
+  flex-shrink: 0;
+  background: #fff;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  border: none;
+}
