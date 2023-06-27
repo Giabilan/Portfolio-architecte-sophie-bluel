@@ -86,7 +86,7 @@ function categoryFilter(IdOfApiCategories) {
 // ---------------Changement de couleurs au click sur les filtres---------------
 
 // Sélection de tous les boutons
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".containerFilterBtn button");
 
 // Parcours tout les "buttons"
 for (let i = 0; i < buttons.length; i++) {

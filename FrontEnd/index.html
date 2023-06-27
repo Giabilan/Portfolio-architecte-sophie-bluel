@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <title>Sophie Bluel - Architecte d'intérieur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f0189703f2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,13 +19,25 @@
     <script type="module" src="./Javascript/gallery.js"></script>
   </head>
   <body>
+    <!-- "editMode" top banner -->
+    <div class="adminBanner editMod">
+      <i class="fa-regular fa-pen-to-square"></i>
+      <p>Mode édition</p>
+      <button class="button-post-changes">publier les changements</button>
+    </div>
+    <!-- Fin -->
     <header>
       <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
       <nav>
         <ul>
           <li><a href="index.html">projets</a></li>
           <li><a href="#">contact</a></li>
-          <li><a href="login.html">login</a></li>
+          <li id="login"><a href="login.html">login</a></li>
+          <!-- "editMode" ancre "logout" -->
+          <li id="logout" class="editMod">
+            <a href="index.html">logout</a>
+          </li>
+          <!-- Fin -->
           <li>
             <a href="https://www.instagram.com/"
               ><img src="./assets/icons/instagram.png" alt="Instagram"
@@ -34,6 +50,12 @@
       <section id="introduction">
         <figure>
           <img src="./assets/images/sophie-bluel.png" alt="" />
+          <!-- "editMode" image introduction -->
+          <div class="editModIntroductionImg editMod">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <p>modifier</p>
+          </div>
+          <!-- Fin -->
         </figure>
         <article>
           <h2>Designer d'espace</h2>
@@ -55,7 +77,14 @@
         </article>
       </section>
       <section id="portfolio">
-        <h2>Mes Projets</h2>
+        <div class="portfolioTitleAndEditBtn">
+          <h2>Mes Projets</h2>
+          <!-- "editMode" Projects -->
+          <button class="editMod modalBtn">
+            <i class="fa-regular fa-pen-to-square"></i>modifier
+          </button>
+          <!-- Fin -->
+        </div>
         <div class="containerFilterBtn">
           <!-- Boutons filtres -->
         </div>

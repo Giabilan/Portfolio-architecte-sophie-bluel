@@ -129,7 +129,7 @@ table {
 }
 /** end reset css**/
 body {
-  max-width: 1140px;
+  width: 100%;
   margin: auto;
   font-family: "Work Sans";
   font-size: 14px;
@@ -137,10 +137,12 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  margin: 50px 0;
+  margin: 50px auto;
+  max-width: 1140px;
 }
 section {
-  margin: 50px 0;
+  max-width: 1140px;
+  margin: 50px auto;
 }
 
 h1 {
@@ -175,8 +177,8 @@ nav li {
 }
 
 nav li a {
-	text-decoration: none;
-	cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 li:hover {
@@ -205,10 +207,11 @@ li:hover {
 #introduction p {
   margin-bottom: 0.5em;
 }
-#portfolio h2 {
+
+/* #portfolio h2 {
   text-align: center;
   margin-bottom: 1em;
-}
+} */
 
 /* Début filtre */
 .containerFilterBtn {
@@ -301,3 +304,71 @@ footer nav ul {
   justify-content: flex-end;
   margin: 2em;
 }
+
+/* Début EditMode */
+.editMod {
+  display: flex;
+}
+
+/* Panal-top */
+.adminBanner {
+  width: 100%;
+  height: 59px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.adminBanner i {
+  margin-right: -7px;
+  font-size: 16px;
+}
+
+.adminBanner .button-post-changes {
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  font-family: Work Sans;
+  font-weight: 500;
+  border-radius: 60px;
+  background: #fff;
+  width: 216px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+/* Début editMode main image */
+.editModIntroductionImg {
+  width: 80%;
+  margin: 6px auto;
+}
+.editModIntroductionImg i {
+  margin-right: 8px;
+}
+/* Fin editMode main image */
+
+.portfolioTitleAndEditBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.portfolioTitleAndEditBtn button {
+  background: none;
+  border: none;
+  font-family: "Work sans";
+  font-size: 14px;
+  margin: 0 30px;
+  padding-top: 7px;
+  color: black;
+}
+
+.portfolioTitleAndEditBtn button i {
+  margin-right: 8px;
+}
+
+/* Fin EditMode */

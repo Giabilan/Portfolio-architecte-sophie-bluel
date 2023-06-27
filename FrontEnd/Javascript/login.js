@@ -39,6 +39,7 @@ formInfos.addEventListener("submit", async function (event) {
 
   // Si connecté alors
   if (authentificationState === true) {
+    console.log("Vous êtes connecté"); // Ajout d'un message dans la console pour vérifier que vous êtes connecté
     // Tu me stock le token dans  "authentificationToken"
     sessionStorage.setItem("authentificationToken", authentificationToken);
     // Tu me stock la connexion (200 connected) "authentificationToken"
