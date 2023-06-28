@@ -1,7 +1,7 @@
 // Récupération de la balise "form"
 const formInfos = document.querySelector("form");
 
-// Fonction d'authentification à partir des informations de l'API
+// Fonction d'auth à partir des informations de l'API
 formInfos.addEventListener("submit", async function (event) {
   // la page ne se rechargera plus en gardant les valeurs entréees
   event.preventDefault();
@@ -18,7 +18,9 @@ formInfos.addEventListener("submit", async function (event) {
      Le mot-clé "await" est utilisé pour attendre que la promesse 
      soit résolue avant de continuer
   */
-  const authentificationInfos = await fetch(
+  
+  // "auth" signiifie "authentification"
+  const authInfos = await fetch(
     "http://localhost:5678/api/users/login",
     {
       // method: "POST" : signifie que des données seront envoyées au serveur
@@ -30,20 +32,19 @@ formInfos.addEventListener("submit", async function (event) {
     }
   );
 
-  // Extraction des données JSON de la réponse HTTP, stocké dans "authentificationResponse"
-  const authentificationResponse = await authentificationInfos.json();
-  // Récupération du jeton d'authentification (token)
-  const authentificationToken = authentificationResponse.token;
+  // Extraction des données JSON de la réponse HTTP, stocké dans "authResponse"
+  const authResponse = await authInfos.json();
+  // Récupération du jeton d'auth (token)
+  const authToken = authResponse.token;
   // Vérification de la réponse HTTP en accédant à la propriété "ok" de l'objet "Response"
-  const authentificationState = authentificationInfos.ok;
+  const authState = authInfos.ok;
 
   // Si connecté alors
-  if (authentificationState === true) {
-    console.log("Vous êtes connecté"); // Ajout d'un message dans la console pour vérifier que vous êtes connecté
-    // Tu me stock le token dans  "authentificationToken"
-    sessionStorage.setItem("authentificationToken", authentificationToken);
-    // Tu me stock la connexion (200 connected) "authentificationToken"
-    sessionStorage.setItem("authentificationState", authentificationState);
+  if (authState === true) {
+    // Tu me stock le token dans  "authToken"
+    sessionStorage.setItem("authToken", authToken);
+    // Tu me stock la connexion (200 connected) "authToken"
+    sessionStorage.setItem("authState", authState);
     // Me redrige vers la page "index.html"
     window.location.replace("index.html");
     // Sinon

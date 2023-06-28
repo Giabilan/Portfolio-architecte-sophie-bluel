@@ -1,6 +1,8 @@
 // Import de la liste de tous les travaux, à partir de "data.js"
 import { works, categories } from "./data.js";
 
+import { editMode } from "./editMod.js";
+
 // ---------------fonction qui affiche la gallery---------------
 
 // Fonction pour générer la "gallery" avec le paramètre "works" du fichier "data.js"
@@ -115,3 +117,6 @@ for (let button of buttons) {
     button.style.color = "white";
   });
 }
+
+// Affiche le mode édition si connecté
+editMode();
