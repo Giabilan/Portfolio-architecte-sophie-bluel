@@ -54,3 +54,4 @@ logoutButton.addEventListener("click", function () {
   // Ancre "login" qui passe en "flex"
   document.getElementById("login").style.display = "flex";
 });
+ 
