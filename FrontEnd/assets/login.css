@@ -16,9 +16,10 @@
 .login form {
   display: flex;
   flex-direction: column;
-  width: 70%;
   margin: 30px auto 0 auto;
   text-align: left;
+  width: 379px;
+  flex-shrink: 0;
 }
 
 .login form a {
@@ -63,4 +64,8 @@
 
 .login input[type="submit"]:hover {
   opacity: 0.9;
+}
+
+.footerLoginPage {
+  margin: 340px 20px 0 0;
 }

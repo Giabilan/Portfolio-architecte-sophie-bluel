@@ -1,12 +1,12 @@
 // Import de la liste de tous les travaux, à partir de "data.js"
 import { works, categories } from "./data.js";
 
-import { editMode } from "./editMod.js";
+import { displayEditMod } from "./editMod.js";
 
-// ---------------fonction qui affiche la gallery---------------
+import { displayModal } from "./modal.js";
 
 // Fonction pour générer la "gallery" avec le paramètre "works" du fichier "data.js"
-function generateGallery(works) {
+export function generateGallery(works) {
   // Parcours les données "works"
   for (let i = 0; i < works.length; i++) {
     // "work" contient tout les travaux de api/work
@@ -119,4 +119,7 @@ for (let button of buttons) {
 }
 
 // Affiche le mode édition si connecté
-editMode();
+displayEditMod();
+
+displayModal();
+

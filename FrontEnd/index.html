@@ -16,9 +16,94 @@
     />
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/modal.css" />
     <script type="module" src="./Javascript/gallery.js"></script>
   </head>
   <body>
+    <!-- MODALE "editMode" -->
+    <div class="modal">
+      <!-- Contenu de la modale -->
+      <div class="modalContent">
+        <div class="containerBtnCloseModal">
+          <!-- Bouton pour fermer la modale -->
+          <button class="btnCloseModal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- "Container gallery" -->
+        <div class="containerModalGallery">
+          <h3>Galerie photo</h3>
+          <!-- "gallery" -->
+          <div class="modalGallery">
+            <!-- FIGURE de la Gallerie de projets en "Mode Edition" injecté via "GALLERIE.JS" -->
+          </div>
+        </div>
+        <hr />
+        <!-- Bouton "Ajouter une photo" -->
+        <button class="btnAddImg">Ajouter une photo</button>
+        <br />
+        <!-- Bouton "Supprimer la galerie" -->
+        <button class="btnDeleteImg">Supprimer la galerie</button>
+      </div>
+      <!-- --------------------------------------------------- -->
+      <!-- Au click sur "Ajouter une photo" -->
+      <!-- Contenu de la modale "Ajouter une photo" -->
+      <div class="modalForm">
+        <!-- Contient deux boutons -->
+        <div class="containerModalBtnReturnAndClose">
+          <!-- Bouton retour -->
+          <button class="btnReturnModal">
+          <i class="fa-solid fa-arrow-left-long"></i>
+          </button>
+          <!-- Bouton fermer -->
+          <button class="btnCloseModal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- -- -->
+        <div class="containerModalForm">
+          <h3>Ajout photo</h3>
+          <!-- Formulaire "Ajout photo"-->
+          <form>
+            <!-- Container "Ajouter photo" -->
+            <div class="containerInputAddImg">
+              <i class="fa-sharp fa-solid fa-image pictureIcon"></i>
+              <!-- input "+ Ajouter photo" -->
+              <label for="inputAddImage" class="inputAddImage"
+                >+ Ajouter photo</label
+              >
+              <input
+                type="file"
+                name="inputAddImage"
+                id="inputAddImage"
+                required
+                accept=".jpg, .png"
+              />
+              <!-- Description : format, taille  -->
+              <p class="subtitleAddImgInput">jpg, png : 4mo max</p>
+            </div>
+            <!--  (input) titre de la photo -->
+            <label class="workTitle" for="workTitle">Titre</label>
+            <input type="text" name="workTitle" id="workTitle" required />
+            <!--  (input) category de la photo -->
+            <label class="categoryListModale" for="categoryListModale">Catégorie</label>
+            <!-- Barre de sélection déroulante -->
+            <select name="categoryListModale" id="categoryListModale" required>
+              <option value="">Sélectionner</option>
+              <!-- Insertion des "categories" via "modale.js" -->
+            </select>
+            <p class="errorAddWork"></p>
+            <hr />
+            <!-- bouton Valider -->
+            <button class="modalValidForm">Valider</button>
+          </form>
+        </div>
+      </div>
+      <!-- ----------------- -->
+    </div>
+
+    <!-- FIN DE LA MODALE -------->
+
     <!-- "editMode" top banner -->
     <div class="adminBanner editMod">
       <i class="fa-regular fa-pen-to-square"></i>
@@ -31,7 +116,7 @@
       <nav>
         <ul>
           <li><a href="index.html">projets</a></li>
-          <li><a href="#">contact</a></li>
+          <li><a href="#contact">contact</a></li>
           <li id="login"><a href="login.html">login</a></li>
           <!-- "editMode" ancre "logout" -->
           <li id="logout" class="editMod">
@@ -39,9 +124,9 @@
           </li>
           <!-- Fin -->
           <li>
-            <a href="https://www.instagram.com/"
-              ><img src="./assets/icons/instagram.png" alt="Instagram"
-            /></a>
+            <a href="https://www.instagram.com/">
+              <img src="./assets/icons/instagram.png" alt="Instagram" />
+            </a>
           </li>
         </ul>
       </nav>
@@ -50,7 +135,7 @@
       <section id="introduction">
         <figure>
           <img src="./assets/images/sophie-bluel.png" alt="" />
-          <!-- "editMode" image introduction -->
+          <!-- "editMod" image introduction -->
           <div class="editModIntroductionImg editMod">
             <i class="fa-regular fa-pen-to-square"></i>
             <p>modifier</p>
@@ -58,7 +143,7 @@
           <!-- Fin -->
         </figure>
         <article>
-          <!-- "editMode" texte introduction -->
+          <!-- "editMod" texte introduction -->
           <div class="editModIntroductionText editMod">
             <i class="fa-regular fa-pen-to-square"></i>
             <p>modifier</p>
@@ -86,7 +171,7 @@
         <div class="portfolioTitleAndEditBtn">
           <h2>Mes Projets</h2>
           <!-- "editMode" Projects -->
-          <button class="editMod modalBtn">
+          <button class="editMod btnOpenModal">
             <i class="fa-regular fa-pen-to-square"></i>modifier
           </button>
           <!-- Fin -->
@@ -116,7 +201,7 @@
     <footer>
       <nav>
         <ul>
-          <li>Mentions Légales</li>
+          <li><a href="#">Mentions Légales</a></li>
         </ul>
       </nav>
     </footer>

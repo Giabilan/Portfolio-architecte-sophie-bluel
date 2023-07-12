@@ -1,0 +1,385 @@
+/* Modale général */
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  font-family: "Work sans";
+  font-size: 26px;
+  font-weight: 400;
+}
+
+/* Page principal de la modale */
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  width: 630px;
+  height: 731px;
+  flex-shrink: 0;
+  overflow: auto;
+  border-radius: 10px;
+  background: #fff;
+  color: #000000;
+}
+
+/* Contient le btn pour fermer la modale */
+.containerBtnCloseModal {
+  width: 100%;
+  text-align: end;
+}
+/* "button" pour fermer la modale */
+.containerBtnCloseModal .btnCloseModal {
+  border: none;
+  background: none;
+  margin: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Contient la "gallery" */
+.containerModalGallery {
+  width: 75%;
+  text-align: center;
+  height: auto;
+}
+
+/* "gallery" */
+.modalGallery {
+  height: 350px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 7px;
+  grid-row-gap: 7px;
+  margin: 35px;
+}
+
+/* Taille des images */
+.modalGallery img {
+  width: 77.367px;
+  height: 108.364px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Icone déplacement */
+.modalGallery figure:hover .btnIconMove {
+  display: block;
+}
+.btnIconMove {
+  display: none;
+  position: absolute;
+  top: 6px;
+  right: 27px;
+  z-index: 1;
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  border-radius: 2px;
+  height: 20px;
+  width: 18px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+/* Icone supprimer */
+.btnIconTrash {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  z-index: 1;
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  border-radius: 2px;
+  height: 20px;
+  width: 18px;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Icone supprimer & déplacement */
+.btnIconTrash i,
+.btnIconMove i {
+  font-size: 10px;
+  margin: 0;
+}
+
+/* "button" : "éditer" */
+.modalGallery figure {
+  text-align: left;
+  position: relative;
+}
+.modaleEditBtn {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #000;
+  font-family: Work Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* trait horizontale */
+hr {
+  border: none;
+  border-top: 1px solid #b3b3b3;
+  text-align: center;
+  width: 75%;
+  margin-top: 65px;
+}
+
+/* btn : "Ajouter une photo" */
+.btnAddImg {
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: Syne;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 237px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 60px;
+  background: #1d6154;
+  padding: 5px 18px 5px 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* btn : "Supprimer la galerie" */
+.btnDeleteImg {
+  color: #d65353;
+  background: none;
+  text-align: center;
+  font-family: Syne;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* Page secondaire de la modale */
+.modalForm {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  overflow: auto;
+  border-radius: 10px;
+  background: #fff;
+  color: #000000;
+  width: 630px;
+  height: 670px;
+  flex-shrink: 0;
+}
+
+/* Contient la "modalForm" */
+.containerModalForm {
+  width: 72%;
+  height: auto;
+  text-align: center;
+}
+
+/* Formulaire */
+.containerModalForm form {
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  text-align: left;
+}
+form hr {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+/* Contient le btn "retour" et "fermer" */
+.containerModalBtnReturnAndClose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* btn : "return" */
+.containerModalBtnReturnAndClose .btnReturnModal {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  margin: 20px 30px;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* btn : "close" */
+.containerModalBtnReturnAndClose .btnCloseModal {
+  border: none;
+  background: none;
+  margin: 20px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Contient toute la partie "+ Ajouter photo" avec le bg: #e8f1f6 */
+.containerInputAddImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 420px;
+  height: 169px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  background: #e8f1f6;
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* "preview" de l'image */
+.containerInputAddImg img {
+  height: 169px;
+  width: 129px;
+  flex-shrink: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Icone "paysage" */
+.containerInputAddImg .pictureIcon {
+  font-size: 66px;
+  color: #b9c5cc;
+}
+
+/* Input "+ Ajouter photo" */
+#inputAddImage {
+  display: none;
+}
+.inputAddImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: #cbd6dc;
+  width: 173px;
+  height: 36px;
+  flex-shrink: 0;
+  margin: 0;
+  color: #306685;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* texte en dessous de "inputAddImage" */
+.subtitleAddImgInput {
+  color: #444;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* input "Titre" */
+.workTitle {
+  margin-top: 10px;
+}
+#workTitle {
+  margin-top: 10px;
+  width: 420px;
+  height: 51px;
+  flex-shrink: 0;
+  border: none;
+  background: #fff;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  outline: none;
+}
+#workTitle:focus {
+  border: 1px solid black;
+}
+
+/* input "Catégorie" */
+.categoryListModale {
+  margin-top: 10px;
+}
+#categoryListModale {
+  margin-top: 10px;
+  width: 420px;
+  height: 51px;
+  flex-shrink: 0;
+  border: none;
+  background: #fff;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  outline: none;
+}
+#categoryListModale:focus {
+  border: 1px solid black;
+}
+.containerModalForm select, option {
+  color: black;
+}
+
+/* Message d'erreur si les champs ne sont pas remplis */
+.errorAddWork {
+  margin: auto;
+  padding-top: 15px;
+  font-family: "Syne";
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* btn "Valider" */
+.modalValidForm {
+  margin: auto;
+  border-radius: 60px;
+  background: #a7a7a7;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: Syne;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 237px;
+  height: 36px;
+  flex-shrink: 0;
+}
+/* Affiche ce style si les champs sont remplis */
+.modalValidForm.valid {
+  background: #1d6154;
+  color: white;
+  cursor: pointer;
+}
