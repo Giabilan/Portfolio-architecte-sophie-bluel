@@ -255,6 +255,7 @@ async function addWork() {
   if (addResponse.ok) {
     // Ajoute mon new projet à la fin du tableau "works"
     works.push(await addResponse.json());
+    btnReturnModal.click();
     // Réinitialisation du DOM 
     const modalGallery = document.querySelector(".modalGallery");
     const sectionGallery = document.querySelector(".gallery");
