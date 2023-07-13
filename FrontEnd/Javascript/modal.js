@@ -115,14 +115,14 @@ async function deleteWork(workId) {
   // Si la réponse est "ok" alors le projet sera supprimer
   if (responseDelete.ok) {
     // Récupération de l'ID sélectionner (projet)
-    const workToRemove = document.querySelector(
+    const workToRemove = document.querySelectorAll(
       `figure[data-id="${workId}"]`
     );
 
     // Retire le(s) projet(s)
-
-      workToRemove.remove();
-
+    for (let i = 0; i < workToRemove.length; i++) {
+      workToRemove[i].remove();
+    }
     // Trouver l'index du projet dans le tableau "works" dont l'ID correspond
     const workIndexToRemove = works.findIndex((work) => workId === work.id);
     // Supprime l'élément du tableau "works" à l'index "workIndexToRemove", "1" élément
@@ -251,12 +251,12 @@ async function addWork() {
     body: formData,
   });
 
-  // Si réponse "ok" alors on ajoute le projet au DOM 
+  // Si réponse "ok" alors on ajoute le projet au DOM
   if (addResponse.ok) {
     // Ajoute mon new projet à la fin du tableau "works"
     works.push(await addResponse.json());
     btnReturnModal.click();
-    // Réinitialisation du DOM 
+    // Réinitialisation du DOM
     const modalGallery = document.querySelector(".modalGallery");
     const sectionGallery = document.querySelector(".gallery");
     modalGallery.innerHTML = "";
