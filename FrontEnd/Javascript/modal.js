@@ -115,14 +115,14 @@ async function deleteWork(workId) {
   // Si la réponse est "ok" alors le projet sera supprimer
   if (responseDelete.ok) {
     // Récupération de l'ID sélectionner (projet)
-    const workToRemove = document.querySelectorAll(
+    const workToRemove = document.querySelector(
       `figure[data-id="${workId}"]`
     );
 
     // Retire le(s) projet(s)
-    for (let i = 0; i < workToRemove.length; i++) {
-      workToRemove[i].remove();
-    }
+
+      workToRemove.remove();
+
     // Trouver l'index du projet dans le tableau "works" dont l'ID correspond
     const workIndexToRemove = works.findIndex((work) => workId === work.id);
     // Supprime l'élément du tableau "works" à l'index "workIndexToRemove", "1" élément
