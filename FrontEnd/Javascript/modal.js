@@ -268,3 +268,4 @@ async function addWork() {
     return alert("Échec de la l'ajout du projet");
   }
 }
+
