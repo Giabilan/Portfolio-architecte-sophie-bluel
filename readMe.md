@@ -1,5 +1,7 @@
 Projet 6 | OpenClassrooms - Portfolio architecte de Sophie Bluel
 
+Le code est commentée de A à Z
+
 # Portfolio d'architecte
 
 Ce portfolio permet à l'architecte de mettre en avant ses réalisations et de les éditer à tout moment grâce à un système de connexion sécurisé.
